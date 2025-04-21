@@ -8,7 +8,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-white">
       <Navbar />
       {children}
       <Footer />

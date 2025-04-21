@@ -53,6 +53,9 @@ const Services = () => {
 
       {/* Heading at the top portion */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl">
+        <span className="mb-2 inline-block rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+          Our Strengths
+        </span>
         <div className="mb-8 sm:mb-12 flex flex-col sm:flex-row justify-between gap-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.2]">
             Our Services <span className="text-neutral-500">Made for You</span>
@@ -109,7 +112,7 @@ const ServiceCard = ({
         duration: 0.35,
       }}
       className={`relative flex min-h-[280px] w-[85vw] sm:w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-6 sm:p-8 shadow-lg md:w-3/5 ${
-        index % 2 ? "bg-black text-white" : " bg-white text-black"
+        index % 2 ? "bg-black text-white" : " bg-gray-50 text-black"
       }`}
     >
       <Icon className="absolute right-2 top-2 text-5xl sm:text-7xl opacity-30" />
