@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Using local image paths with better browser compatibility
-const images = ["/images/hero-1.png", "images/hero-2.png"];
+const images = ["/images/hero-1.png", "images/hero-2.png", "images/hero-3.png"];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
