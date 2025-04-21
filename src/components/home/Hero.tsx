@@ -44,15 +44,15 @@ export default function Hero() {
       </div>
 
       {/* Overlay */}
-      <div className="absolute max-w-7xl mx-auto  inset-0 bg-opacity-80 flex items-center ">
+      <div className="absolute max-w-7xl mx-auto inset-0 bg-opacity-80 flex items-center px-4 sm:px-6">
         <div className="max-w-2xl text-left text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4">
             Empowering Industry Through Innovation
           </h1>
-          <p className="text-xl md:text-2xl mb-6">
+          <p className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6">
             High-performance tools & machinery for modern businesses.
           </p>
-          <button className="bg-black hover:bg-gray-900 text-white px-8 py-4 cursor-pointer text-lg font-medium transition-colors duration-300">
+          <button className="w-full sm:w-auto bg-black hover:bg-gray-900 text-white px-6 sm:px-8 py-4 cursor-pointer text-base sm:text-lg font-medium transition-colors duration-300 rounded-sm">
             Explore Products
           </button>
         </div>

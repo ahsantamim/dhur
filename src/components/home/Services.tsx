@@ -44,52 +44,47 @@ const Services = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative py-16 sm:py-24 w-full">
       {/* Top Gray Background */}
-      <div className="h-1/2 bg-gray-100" />
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-gray-100" />
 
       {/* Bottom White Background */}
-      <div className="h-1/2 bg-white" />
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-white" />
 
       {/* Heading at the top portion */}
-      <div className="absolute top-[20%] left-0 w-full px-4">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-12 flex justify-between gap-4">
-            <h2 className="text-4xl text-black font-bold leading-[1.2] md:text-5xl">
-              Our Services{" "}
-              <span className="text-neutral-500">Made for You</span>
-            </h2>
-            <div className="flex gap-2">
-              <button
-                className="h-fit bg-black p-4 text-2xl text-white transition-colors hover:bg-neutral-700"
-                onClick={shiftLeft}
-              >
-                <FiChevronLeft />
-              </button>
-              <button
-                className="h-fit bg-black p-4 text-2xl text-white transition-colors hover:bg-neutral-700"
-                onClick={shiftRight}
-              >
-                <FiChevronRight />
-              </button>
-            </div>
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="mb-8 sm:mb-12 flex flex-col sm:flex-row justify-between gap-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.2]">
+            Our Services <span className="text-neutral-500">Made for You</span>
+          </h2>
+          <div className="flex gap-2 self-end">
+            <button
+              className="h-12 w-12 sm:h-fit bg-black p-3 sm:p-4 text-xl sm:text-2xl text-white transition-colors hover:bg-neutral-700 rounded-full sm:rounded-none touch-manipulation"
+              onClick={shiftLeft}
+              aria-label="Previous service"
+            >
+              <FiChevronLeft />
+            </button>
+            <button
+              className="h-12 w-12 sm:h-fit bg-black p-3 sm:p-4 text-xl sm:text-2xl text-white transition-colors hover:bg-neutral-700 rounded-full sm:rounded-none touch-manipulation"
+              onClick={shiftRight}
+              aria-label="Next service"
+            >
+              <FiChevronRight />
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Cards centered vertically across both backgrounds */}
-      <div className="absolute top-1/2 left-0 w-full transform -translate-y-1/2">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex gap-4">
-            {services.map((service, index) => (
-              <ServiceCard
-                {...service}
-                key={index}
-                position={position}
-                index={index}
-              />
-            ))}
-          </div>
+        {/* Cards centered vertically */}
+        <div className="flex gap-4 overflow-hidden">
+          {services.map((service, index) => (
+            <ServiceCard
+              {...service}
+              key={index}
+              position={position}
+              index={index}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -113,13 +108,13 @@ const ServiceCard = ({
         ease: "easeInOut",
         duration: 0.35,
       }}
-      className={`relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 ${
+      className={`relative flex min-h-[280px] w-[85vw] sm:w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-6 sm:p-8 shadow-lg md:w-3/5 ${
         index % 2 ? "bg-black text-white" : " bg-white text-black"
       }`}
     >
-      <Icon className="absolute right-2 top-2 text-7xl opacity-30" />
-      <h3 className="mb-8 text-3xl font-bold">{title}</h3>
-      <p>{description}</p>
+      <Icon className="absolute right-2 top-2 text-5xl sm:text-7xl opacity-30" />
+      <h3 className="mb-6 sm:mb-8 text-2xl sm:text-3xl font-bold">{title}</h3>
+      <p className="text-sm sm:text-base">{description}</p>
     </motion.div>
   );
 };

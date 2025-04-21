@@ -141,8 +141,8 @@ const NavLink = ({ children, href, FlyoutContent }: NavLinkProps) => {
 const CTAs = () => {
   return (
     <div className="flex items-center gap-3">
-      <button className="rounded-lg border-2 bg-black px-4 py-2 font-semibold text-white transition-colors  hover:bg-gray-950 hover:text-white cursor-pointer">
-        Schedule a Demo
+      <button className="px-6 py-2 font-medium bg-black text-white w-fit transition-all shadow-[3px_3px_0px_gray] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+        Book A Meeting
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { Navbar } from "../components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -7,9 +8,10 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       {children}
+      <Footer />
     </div>
   );
 };
