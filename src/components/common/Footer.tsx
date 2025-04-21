@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
             <img
               className="w-auto h-9 scale-110 transition-transform hover:scale-125"
-              src="/logo-black.PNG"
+              src="/logo-black.png"
               alt="JSTex Logo"
             />
 
