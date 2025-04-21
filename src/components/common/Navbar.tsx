@@ -107,7 +107,7 @@ const NavLink = ({ children, href, FlyoutContent }: NavLinkProps) => {
           className="h-[20px]"
         >
           <span className="flex h-[20px] items-center">{children}</span>
-          <span className="flex h-[20px] items-center text-indigo-600 font-medium">
+          <span className="flex h-[20px] items-center text-black font-medium">
             {children}
           </span>
         </motion.div>
@@ -115,7 +115,7 @@ const NavLink = ({ children, href, FlyoutContent }: NavLinkProps) => {
           style={{
             transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
           }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-black transition-transform duration-300 ease-out"
         />
       </a>
       <AnimatePresence>
