@@ -46,15 +46,15 @@ const Stat = ({
 const About: React.FC = () => {
   return (
     <>
-      <section className="relative overflow-hidden  py-8 sm:py-12 h-screen flex flex-col">
+      <section className="relative overflow-hidden py-12 sm:py-16 min-h-[80vh] flex flex-col">
         {/* Subtle background elements */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black blur-3xl"></div>
           <div className="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full bg-neutral-900 blur-3xl"></div>
         </div>
 
-        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 flex-grow">
-          <div className="flex flex-col items-center gap-6 md:flex-row md:gap-8 h-full">
+        <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
             {/* Image column */}
             <div className="group w-full overflow-hidden md:w-1/2">
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -98,7 +98,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="relative border-t  py-4 sm:py-6 mt-4">
+        <div className="relative border-t py-8 sm:py-10 mt-8">
           {/* Subtle background shapes */}
           <div className="absolute inset-0 opacity-[0.02]">
             <div className="absolute left-1/4 top-1/4 h-24 w-24 border-4 border-black rounded-full"></div>

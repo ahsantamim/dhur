@@ -3,7 +3,12 @@ import { FiMenu, FiArrowRight, FiX, FiChevronDown } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { useMotionValueEvent, AnimatePresence, useScroll, motion } from "framer-motion";
+import {
+  useMotionValueEvent,
+  AnimatePresence,
+  useScroll,
+  motion,
+} from "framer-motion";
 import useMeasure from "react-use-measure";
 
 // Define types for the links
