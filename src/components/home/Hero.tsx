@@ -3,7 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Using local image paths with better browser compatibility
-const images = ["/images/hero-1.png", "images/hero-2.png", "images/hero-3.png"];
+const images = [
+  "images/home/hero-1.png",
+  "images/home/hero-2.png",
+  "images/home/hero-3.png",
+];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);

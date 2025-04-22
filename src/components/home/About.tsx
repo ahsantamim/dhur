@@ -59,7 +59,7 @@ const About: React.FC = () => {
             <div className="group w-full overflow-hidden md:w-1/2">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="/images/home/about-image.jpg"
                   alt="Our innovative team collaborating"
                   className="h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-105"
                   loading="lazy"
@@ -72,17 +72,19 @@ const About: React.FC = () => {
             <div className="w-full md:w-1/2">
               <div className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-black">
-                  Transforming ideas into
+                  Who We Are
                   <span className="block mt-1 text-neutral-500">
-                    impactful solutions
+                    Leading Apparel & Fabric Manufacturer
                   </span>
                 </h2>
 
                 <p className="max-w-xl text-sm sm:text-base leading-relaxed text-neutral-600">
-                  Since 2010, we've been partnering with forward-thinking
-                  businesses to create meaningful change through innovation and
-                  technology. Our approach combines deep industry expertise with
-                  cutting-edge capabilities.
+                  JS-TEX Bangladesh is a trusted apparel sourcing and
+                  manufacturing company. We produce top-quality woven, denim,
+                  knitwear, and sweaters for renowned buyers, importers, and
+                  retailers across the US, RU, and EU. Since our beginning, we
+                  have built strong partnerships, earning trust through
+                  exceptional quality, innovation, and reliable service.
                 </p>
 
                 <Link
