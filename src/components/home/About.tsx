@@ -47,7 +47,11 @@ const About: React.FC = () => {
   return (
     <>
       <section className="relative overflow-hidden py-12 sm:py-16 min-h-[80vh] flex flex-col">
+<<<<<<< HEAD
         {/* Enhanced background elements with more reddish SVGs */}
+=======
+        {/* Subtle background elements */}
+>>>>>>> 34a50698daeb2f099b4b70be033a176a4c360246
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-900 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full bg-black blur-3xl"></div>
@@ -98,7 +102,11 @@ const About: React.FC = () => {
 
         <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
+<<<<<<< HEAD
             {/* Image column - removed grayscale */}
+=======
+            {/* Image column */}
+>>>>>>> 34a50698daeb2f099b4b70be033a176a4c360246
             <div className="group w-full overflow-hidden md:w-1/2">
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
@@ -118,7 +126,11 @@ const About: React.FC = () => {
                 <div className="w-12 h-1 bg-red-600 mb-2"></div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-black">
                   Who We Are
+<<<<<<< HEAD
                   <span className="block mt-1 text-red-600">
+=======
+                  <span className="block mt-1 text-neutral-500">
+>>>>>>> 34a50698daeb2f099b4b70be033a176a4c360246
                     Leading Apparel & Fabric Manufacturer
                   </span>
                 </h2>
@@ -146,7 +158,11 @@ const About: React.FC = () => {
 
         {/* Stats Section */}
         <div className="relative border-t py-8 sm:py-10 mt-8">
+<<<<<<< HEAD
           {/* Enhanced background shapes */}
+=======
+          {/* Subtle background shapes */}
+>>>>>>> 34a50698daeb2f099b4b70be033a176a4c360246
           <div className="absolute inset-0 opacity-[0.02]">
             <div className="absolute left-1/4 top-1/4 h-24 w-24 border-4 border-red-600 rounded-full"></div>
             <div className="absolute bottom-1/4 right-1/4 h-32 w-32 border-4 border-black rotate-45"></div>
