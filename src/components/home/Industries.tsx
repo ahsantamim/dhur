@@ -27,7 +27,7 @@ interface LogoItemProps {
 const Industries = () => {
   return (
     <section className="relative bg-white py-20 sm:py-28 overflow-hidden">
-      {/* Subtle SVG background elements */}
+      {/* Enhanced SVG background elements with more reddish shapes */}
       <div className="absolute inset-0 opacity-[0.03]">
         <svg
           className="absolute left-1/4 top-0 h-64 w-64 -translate-y-1/2"
@@ -37,7 +37,7 @@ const Industries = () => {
             cx="50"
             cy="50"
             r="40"
-            stroke="black"
+            stroke="#DC2626"
             strokeWidth="10"
             fill="none"
           />
@@ -56,6 +56,74 @@ const Industries = () => {
             fill="none"
           />
         </svg>
+
+        {/* New SVG elements */}
+        <svg
+          className="absolute left-0 top-1/3 h-80 w-80 text-red-600/20 -translate-x-1/4"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M10,50 Q25,20 40,50 T70,50 T100,50"
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="none"
+          />
+        </svg>
+
+        <svg
+          className="absolute right-0 top-1/4 h-72 w-72 text-red-700/15 translate-x-1/4"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M10,10 L90,10 L90,90 L10,90 Z"
+            stroke="currentColor"
+            strokeWidth="8"
+            fill="none"
+            strokeDasharray="10,5"
+          />
+        </svg>
+
+        <svg
+          className="absolute left-1/2 bottom-0 h-56 w-56 text-red-500/20 -translate-x-1/2 translate-y-1/4"
+          viewBox="0 0 100 100"
+        >
+          <polygon
+            points="50,10 90,30 90,70 50,90 10,70 10,30"
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="none"
+          />
+        </svg>
+
+        <svg
+          className="absolute left-1/4 top-1/2 h-40 w-40 text-red-800/15 -translate-y-1/2"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="30"
+            cy="30"
+            r="20"
+            stroke="currentColor"
+            strokeWidth="5"
+            fill="none"
+          />
+          <circle
+            cx="70"
+            cy="70"
+            r="15"
+            stroke="currentColor"
+            strokeWidth="5"
+            fill="none"
+          />
+          <circle
+            cx="30"
+            cy="70"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="5"
+            fill="none"
+          />
+        </svg>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-7xl mb-12 sm:mb-16">
@@ -64,7 +132,7 @@ const Industries = () => {
             Our Reach
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.2] mb-4">
-            Industries We Serve
+            Industries <span className="text-red-600">We Serve</span>
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto text-base sm:text-lg">
             We provide cutting-edge solutions across diverse industries, helping
@@ -107,7 +175,7 @@ const Industries = () => {
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center justify-center bg-black hover:bg-neutral-800 text-white px-6 py-3 font-medium transition-colors"
+          className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 font-medium transition-colors"
         >
           Explore Case Studies
         </motion.button>
@@ -132,8 +200,8 @@ const TranslateWrapper = ({ children, reverse }: TranslateWrapperProps) => {
 const LogoItem = ({ Icon, label }: LogoItemProps) => {
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex justify-center items-center bg-white hover:bg-gray-50 text-black transition-colors rounded-lg shadow-sm border border-gray-100">
-        <Icon className="text-3xl sm:text-5xl md:text-6xl transition-transform hover:scale-110" />
+      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex justify-center items-center bg-white hover:bg-gray-50 text-black transition-colors rounded-lg shadow-sm border border-gray-100 group">
+        <Icon className="text-3xl sm:text-5xl md:text-6xl transition-all hover:scale-110 hover:text-red-600" />
       </div>
       <span className="text-xs sm:text-sm text-neutral-600 font-medium whitespace-nowrap">
         {label}

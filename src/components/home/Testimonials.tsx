@@ -55,13 +55,80 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-white py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+    <section className="bg-white py-16 sm:py-24 relative overflow-hidden">
+      {/* Added reddish SVG background elements */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+        <svg
+          className="absolute left-0 top-0 h-72 w-72 text-red-600/30 -translate-x-1/4"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M30,10 Q-10,50 30,90 Q50,110 70,90 Q110,50 70,10 Q50,-10 30,10"
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="none"
+          />
+        </svg>
+
+        <svg
+          className="absolute right-0 top-1/4 h-64 w-64 text-red-700/20 translate-x-1/4"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M10,25 L25,10 L75,10 L90,25 L90,75 L75,90 L25,90 L10,75 Z"
+            stroke="currentColor"
+            strokeWidth="8"
+            fill="none"
+          />
+        </svg>
+
+        <svg
+          className="absolute bottom-0 left-1/3 h-56 w-56 text-red-500/15"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="none"
+            strokeDasharray="15,8"
+          />
+        </svg>
+
+        <svg
+          className="absolute bottom-1/4 right-1/4 h-40 w-40 text-red-800/20 rotate-12"
+          viewBox="0 0 100 100"
+        >
+          <path
+            d="M10,50 Q25,25 50,25 T90,50 T50,75 T10,50"
+            stroke="currentColor"
+            strokeWidth="6"
+            fill="none"
+          />
+        </svg>
+
+        <svg
+          className="absolute top-1/2 left-1/4 h-48 w-48 text-red-600/15 -translate-y-1/2"
+          viewBox="0 0 100 100"
+        >
+          <polygon
+            points="20,10 80,10 95,50 80,90 20,90 5,50"
+            stroke="currentColor"
+            strokeWidth="4"
+            fill="none"
+          />
+        </svg>
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start md:items-center">
           {/* Left side - Title */}
           <div>
+            <div className="w-12 h-1 bg-red-600 mb-3"></div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.2] mb-3 sm:mb-4 text-black">
-              What Our Clients Say
+              What Our <span className="text-red-600">Clients Say</span>
             </h2>
             <p className="text-neutral-600 max-w-xl text-base sm:text-lg">
               Trusted by industry leaders worldwide for our commitment to
@@ -82,7 +149,7 @@ const Testimonials = () => {
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                    <FiStar key={i} className="text-black w-4 h-4" />
+                    <FiStar key={i} className="text-red-600 w-4 h-4" />
                   ))}
                 </div>
 
@@ -95,8 +162,10 @@ const Testimonials = () => {
                     {testimonials[currentIndex].name}
                   </div>
                   <div className="text-neutral-600 text-sm">
-                    {testimonials[currentIndex].position} at{" "}
-                    {testimonials[currentIndex].company}
+                    <span className="text-red-600">
+                      {testimonials[currentIndex].position}
+                    </span>{" "}
+                    at {testimonials[currentIndex].company}
                   </div>
                 </div>
               </motion.div>
@@ -106,14 +175,14 @@ const Testimonials = () => {
             <div className="flex gap-2 mt-6 sm:mt-8">
               <button
                 onClick={prevTestimonial}
-                className="p-3 hover:bg-neutral-100 rounded-full transition-colors border border-neutral-200 touch-manipulation"
+                className="p-3 hover:bg-red-50 rounded-full transition-colors border border-neutral-200 touch-manipulation hover:border-red-200"
                 aria-label="Previous testimonial"
               >
                 <FiArrowLeft className="w-5 h-5 text-black" />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="p-3 hover:bg-neutral-100 rounded-full transition-colors border border-neutral-200 touch-manipulation"
+                className="p-3 hover:bg-red-50 rounded-full transition-colors border border-neutral-200 touch-manipulation hover:border-red-200"
                 aria-label="Next testimonial"
               >
                 <FiArrowRight className="w-5 h-5 text-black" />
@@ -127,7 +196,7 @@ const Testimonials = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-8 h-1 rounded-full transition-all ${
-                    index === currentIndex ? "bg-black" : "bg-neutral-200"
+                    index === currentIndex ? "bg-red-600" : "bg-neutral-200"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

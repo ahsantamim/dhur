@@ -3,6 +3,13 @@ import { FiMenu, FiArrowRight, FiX, FiChevronDown } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import {
+  useMotionValueEvent,
+  AnimatePresence,
+  useScroll,
+  motion,
+} from "framer-motion";
+import useMeasure from "react-use-measure";
 
 // Define types for the links
 interface NavLinkType {
@@ -31,16 +38,6 @@ interface LogoProps {
 
 // Client-side only Navbar implementation
 const NavbarComponent = () => {
-  // Import motion hooks only on client-side
-  const {
-    useMotionValueEvent,
-    AnimatePresence,
-    useScroll,
-    motion,
-  } = require("framer-motion");
-  // Import useMeasure hook only on client-side
-  const useMeasure = require("react-use-measure").default;
-
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
 
@@ -141,7 +138,7 @@ const NavbarComponent = () => {
     FoldContent,
     setMenuOpen,
   }: MobileMenuLinkProps) => {
-    const [ref, { height }] = useMeasure();
+    const [ref, bounds] = useMeasure();
     const [open, setOpen] = useState(false);
 
     return (
@@ -187,7 +184,7 @@ const NavbarComponent = () => {
           <motion.div
             initial={false}
             animate={{
-              height: open ? height : "0px",
+              height: open ? bounds.height : 0,
               marginBottom: open ? "24px" : "0px",
               marginTop: open ? "12px" : "0px",
             }}
