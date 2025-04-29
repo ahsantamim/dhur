@@ -9,11 +9,13 @@ const Stat = ({
   suffix,
   decimals = 0,
   subheading,
+  lightMode = false,
 }: {
   num: number;
   suffix: string;
   decimals?: number;
   subheading: string;
+  lightMode?: boolean;
 }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref);
@@ -32,11 +34,11 @@ const Stat = ({
 
   return (
     <div className="flex w-full sm:w-72 flex-col items-center py-2 sm:py-3">
-      <p className="text-center font-mono text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-black">
+      <p className={`text-center font-mono text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter ${lightMode ? 'text-white' : 'text-black'}`}>
         <span ref={ref}></span>
         {suffix}
       </p>
-      <p className="max-w-[12rem] text-center text-xs font-medium uppercase tracking-wider text-neutral-600">
+      <p className={`max-w-[12rem] text-center text-xs font-medium uppercase tracking-wider ${lightMode ? 'text-white/80' : 'text-neutral-600'}`}>
         {subheading}
       </p>
     </div>
@@ -145,28 +147,11 @@ const About: React.FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="relative border-t py-8 sm:py-10 mt-8">
+        <div className="relative border-t border-red-700 py-8 sm:py-10 mt-8 bg-red-600">
           {/* Enhanced background shapes */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <div className="absolute left-1/4 top-1/4 h-24 w-24 border-4 border-red-600 rounded-full"></div>
-            <div className="absolute bottom-1/4 right-1/4 h-32 w-32 border-4 border-black rotate-45"></div>
-            <div className="absolute left-3/4 top-1/2 h-16 w-16 border-4 border-red-600 rounded-full"></div>
-
-            {/* New SVG elements */}
+          <div className="absolute inset-0 opacity-[0.05]">
             <svg
-              className="absolute right-1/3 bottom-1/4 h-40 w-40 text-red-700/10"
-              viewBox="0 0 100 100"
-            >
-              <path
-                d="M10,50 Q25,25 50,50 T90,50"
-                stroke="currentColor"
-                strokeWidth="8"
-                fill="none"
-              />
-            </svg>
-
-            <svg
-              className="absolute left-1/5 bottom-1/3 h-32 w-32 text-red-500/15 -rotate-12"
+              className="absolute right-1/4 top-0 h-64 w-64 text-white"
               viewBox="0 0 100 100"
             >
               <path
@@ -179,20 +164,15 @@ const About: React.FC = () => {
           </div>
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h2 className="mb-3 sm:mb-4 text-center font-mono text-sm font-medium uppercase tracking-widest text-neutral-900">
+            <h2 className="mb-3 sm:mb-4 text-center font-mono text-sm font-medium uppercase tracking-widest text-white/90">
               Trusted by industry leaders with
-              <span className="inline ml-1 text-red-600">proven results</span>
+              <span className="inline ml-1 text-white">proven results</span>
             </h2>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center divide-y sm:divide-y-0 sm:divide-x divide-neutral-200">
-              <Stat num={92} suffix="%" subheading="Client satisfaction rate" />
-              <Stat
-                num={25.5}
-                decimals={1}
-                suffix="K+"
-                subheading="Projects completed"
-              />
-              <Stat num={150} suffix="M+" subheading="Revenue generated" />
+            <div className="flex flex-col sm:flex-row items-center justify-center divide-y sm:divide-y-0 sm:divide-x divide-red-500/20">
+              <Stat num={92} suffix="%" subheading="Client satisfaction rate" lightMode={true} />
+              <Stat num={25.5} decimals={1} suffix="K+" subheading="Projects completed" lightMode={true} />
+              <Stat num={150} suffix="M+" subheading="Revenue generated" lightMode={true} />
             </div>
           </div>
         </div>

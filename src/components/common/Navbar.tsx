@@ -52,7 +52,7 @@ const NavbarComponent = () => {
         <img
           src="/logo.PNG"
           alt="JSTex Logo"
-          className="h-9 scale-110 transition-transform hover:scale-125"
+          className="h-9 scale-150 transition-transform hover:scale-125"
         />
       </Link>
     );
@@ -250,7 +250,7 @@ const NavbarComponent = () => {
       transition-all duration-300 ease-out lg:px-12
       ${
         scrolled
-          ? "bg-white py-1 shadow-xl"
+          ? "bg-white py-2 shadow-xl"
           : "bg-neutral-950/0 py-2 shadow-none"
       }`}
     >

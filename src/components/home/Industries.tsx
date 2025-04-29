@@ -26,8 +26,8 @@ interface LogoItemProps {
 
 const Industries = () => {
   return (
-    <section className="relative bg-white py-20 sm:py-28 overflow-hidden">
-      {/* Enhanced SVG background elements with more reddish shapes */}
+    <section className="relative bg-neutral-50 py-20 sm:py-28 overflow-hidden">
+      {/* Enhanced SVG background elements */}
       <div className="absolute inset-0 opacity-[0.03]">
         <svg
           className="absolute left-1/4 top-0 h-64 w-64 -translate-y-1/2"
@@ -51,13 +51,13 @@ const Industries = () => {
             y="10"
             width="80"
             height="80"
-            stroke="black"
+            stroke="#991B1B"
             strokeWidth="10"
             fill="none"
           />
         </svg>
 
-        {/* New SVG elements */}
+        {/* SVG elements */}
         <svg
           className="absolute left-0 top-1/3 h-80 w-80 text-red-600/20 -translate-x-1/4"
           viewBox="0 0 100 100"
@@ -71,7 +71,7 @@ const Industries = () => {
         </svg>
 
         <svg
-          className="absolute right-0 top-1/4 h-72 w-72 text-red-700/15 translate-x-1/4"
+          className="absolute right-0 top-1/4 h-72 w-72 text-red-800/15 translate-x-1/4"
           viewBox="0 0 100 100"
         >
           <path
@@ -94,41 +94,11 @@ const Industries = () => {
             fill="none"
           />
         </svg>
-
-        <svg
-          className="absolute left-1/4 top-1/2 h-40 w-40 text-red-800/15 -translate-y-1/2"
-          viewBox="0 0 100 100"
-        >
-          <circle
-            cx="30"
-            cy="30"
-            r="20"
-            stroke="currentColor"
-            strokeWidth="5"
-            fill="none"
-          />
-          <circle
-            cx="70"
-            cy="70"
-            r="15"
-            stroke="currentColor"
-            strokeWidth="5"
-            fill="none"
-          />
-          <circle
-            cx="30"
-            cy="70"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="5"
-            fill="none"
-          />
-        </svg>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-7xl mb-12 sm:mb-16">
         <div className="text-center">
-          <span className="mb-2 inline-block rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-2 inline-block rounded-full bg-red-600 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
             Our Reach
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.2] mb-4">
@@ -142,7 +112,7 @@ const Industries = () => {
         </div>
       </div>
 
-      <div className="relative border-t border-b border-gray-100 py-10 bg-gray-50/50">
+      <div className="relative border-t border-b border-neutral-100 py-10 bg-white/50">
         <div className="max-w-7xl mx-auto flex overflow-hidden">
           <TranslateWrapper>
             <LogoRow1 />
@@ -200,7 +170,7 @@ const TranslateWrapper = ({ children, reverse }: TranslateWrapperProps) => {
 const LogoItem = ({ Icon, label }: LogoItemProps) => {
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex justify-center items-center bg-white hover:bg-gray-50 text-black transition-colors rounded-lg shadow-sm border border-gray-100 group">
+      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex justify-center items-center bg-white hover:bg-red-50 text-neutral-800 transition-colors rounded-lg shadow-sm border border-neutral-100 group">
         <Icon className="text-3xl sm:text-5xl md:text-6xl transition-all hover:scale-110 hover:text-red-600" />
       </div>
       <span className="text-xs sm:text-sm text-neutral-600 font-medium whitespace-nowrap">
