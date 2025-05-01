@@ -45,7 +45,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative" style={{ height: "115vh" }}>
+    <section className="relative" style={{ height: "100vh" }}>
       {/* Fixed height container to allow content to slide over */}
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Background Images with Parallax Effect */}
@@ -146,10 +146,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Content that will slide over the hero image */}
+      {/* Removed the extra white gap completely */}
       <div ref={contentRef} className="relative bg-white z-10">
-        {/* This empty div is much smaller now to reduce the gap */}
-        <div className="h-[15vh]"></div>
+        {/* Removed the height div that was causing the gap */}
       </div>
     </section>
   );

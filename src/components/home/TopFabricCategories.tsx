@@ -2,76 +2,26 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Define the category interface
-interface FabricCategory {
+// Import the products data from the product page
+import { products } from "@/pages/products/[slug]";
+
+// Define the product interface
+interface Product {
   id: number;
   name: string;
-  image: string;
   slug: string;
+  category: string;
+  images: string[];
+  description: string;
 }
 
-// Sample fabric categories data
-const fabricCategories: FabricCategory[] = [
-  {
-    id: 1,
-    name: "Cotton",
-    image: "/images/home/hero-1.png", // Using existing images for now
-    slug: "cotton",
-  },
-  {
-    id: 2,
-    name: "Silk",
-    image: "/images/home/hero-2.png",
-    slug: "silk",
-  },
-  {
-    id: 3,
-    name: "Linen",
-    image: "/images/home/hero-3.png",
-    slug: "linen",
-  },
-  {
-    id: 4,
-    name: "Wool",
-    image: "/images/home/hero-1.png",
-    slug: "wool",
-  },
-  {
-    id: 5,
-    name: "Polyester",
-    image: "/images/home/hero-2.png",
-    slug: "polyester",
-  },
-  {
-    id: 6,
-    name: "Denim",
-    image: "/images/home/hero-3.png",
-    slug: "denim",
-  },
-  {
-    id: 7,
-    name: "Velvet",
-    image: "/images/home/hero-1.png",
-    slug: "velvet",
-  },
-  {
-    id: 8,
-    name: "Satin",
-    image: "/images/home/hero-2.png",
-    slug: "satin",
-  },
-  {
-    id: 9,
-    name: "Canvas",
-    image: "/images/home/hero-3.png",
-    slug: "canvas",
-  },
-];
-
 const TopFabricCategories = () => {
+  // Select 6 featured products to display
+  const featuredProducts = products.slice(0, 6);
+
   return (
     <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
-      {/* Added reddish SVG background elements */}
+      {/* SVG Background Elements */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg
           className="absolute top-0 right-1/4 h-64 w-64 text-red-600/30"
@@ -126,56 +76,99 @@ const TopFabricCategories = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-7xl">
-        {/* Section heading - now centered */}
-        <div className="mb-8 sm:mb-12 text-center">
+        {/* Section heading */}
+        <div className="mb-12 sm:mb-16 text-center">
           <span className="mb-2 inline-block rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-            Our Collection
+            Our Products
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.2]">
-            Top Fabric <span className="text-red-600">Categories</span>
+            Featured <span className="text-red-600">Fabrics</span>
           </h2>
           <p className="mt-4 mx-auto max-w-2xl text-gray-600">
-            Explore our wide selection of premium fabrics suitable for all your
-            needs.
+            Explore our selection of premium quality fabrics designed for durability, 
+            comfort, and performance across various applications.
           </p>
         </div>
 
-        {/* Fabric categories grid - 3 columns x 3 rows */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-screen">
-          {fabricCategories.map((category) => (
+        {/* Products grid - 3 columns x 2 rows */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+          {featuredProducts.map((product) => (
             <Link
-              href={`/fabrics/${category.slug}`}
-              key={category.id}
-              className="relative group overflow-hidden bg-gray-100 hover:shadow-xl transition-shadow duration-300"
+              href={`/products/${product.slug}`}
+              key={product.id}
+              className="relative group overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 h-64 sm:h-72 md:h-80 flex flex-col"
             >
               <div className="relative w-full h-full">
-                {/* Image overlay */}
-                <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-20 transition-opacity duration-300 z-10"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-10"></div>
+                {/* Modern overlay with gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 opacity-70 group-hover:opacity-60 transition-opacity duration-300"></div>
 
                 {/* Red accent on hover */}
-                <div className="absolute inset-0 bg-transparent group-hover:bg-red-900/10 transition-all duration-300 z-10 mix-blend-overlay"></div>
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 z-20"></div>
 
-                {/* Image (no grayscale filter) */}
+                {/* Image */}
                 <div className="relative w-full h-full">
                   <Image
-                    src={category.image}
-                    alt={category.name}
+                    src={product.images[0]}
+                    alt={product.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                 </div>
 
-                {/* Category name */}
-                <div className="absolute bottom-0 left-0 w-full p-4 z-20">
-                  <div className="w-12 h-1 bg-red-600 mb-2 transition-all duration-300 group-hover:w-16"></div>
-                  <h3 className="text-white text-xl font-bold">
-                    {category.name}
+                {/* Product name and category */}
+                <div className="absolute bottom-0 left-0 w-full p-5 z-20 transform translate-y-0 group-hover:translate-y-[-5px] transition-transform duration-300">
+                  <span className="text-red-300 text-sm font-medium mb-1 block">
+                    {product.category}
+                  </span>
+                  <h3 className="text-white text-xl md:text-2xl font-bold tracking-wide">
+                    {product.name}
                   </h3>
+                  <div className="flex items-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white text-sm">View Details</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 ml-1 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* View All Products button */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/products"
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700 transition-colors duration-300"
+          >
+            View All Products
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 ml-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
