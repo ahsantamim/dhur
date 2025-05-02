@@ -14,10 +14,15 @@ const ClientsHero: React.FC = () => {
             Our Global Network
           </span>
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Trusted Worldwide by <span className="text-red-500">Leading Brands</span>
+            Trusted Worldwide by{" "}
+            <span className="text-red-500">Leading Brands</span>
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
-            JSTEX has a long-standing reputation for supplying high-quality woven and knitted fabrics to customers across the globe. We take pride in our partnerships with retailers, wholesalers, and garment factories in various regions, including Southeast Asia, South America, Africa, and the Middle East.
+            JSTEX has a long-standing reputation for supplying high-quality
+            woven and knitted fabrics to customers across the globe. We take
+            pride in our partnerships with retailers, wholesalers, and garment
+            factories in various regions, including Southeast Asia, South
+            America, Africa, and the Middle East.
           </p>
         </div>
       </div>
@@ -30,7 +35,13 @@ const ClientsHero: React.FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="8" />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="currentColor"
+            strokeWidth="8"
+          />
         </svg>
       </div>
 
@@ -41,7 +52,14 @@ const ClientsHero: React.FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect x="10" y="10" width="80" height="80" stroke="currentColor" strokeWidth="8" />
+          <rect
+            x="10"
+            y="10"
+            width="80"
+            height="80"
+            stroke="currentColor"
+            strokeWidth="8"
+          />
         </svg>
       </div>
     </section>

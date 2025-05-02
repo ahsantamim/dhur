@@ -2,22 +2,12 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Import the products data from the product page
-import { products } from "@/pages/products/[slug]";
-
-// Define the product interface
-interface Product {
-  id: number;
-  name: string;
-  slug: string;
-  category: string;
-  images: string[];
-  description: string;
-}
+// Import the product categories data
+import { productCategories } from "@/data/productData";
 
 const TopFabricCategories = () => {
-  // Select 6 featured products to display
-  const featuredProducts = products.slice(0, 6);
+  // Select 6 featured categories to display (all our categories)
+  const featuredCategories = productCategories;
 
   return (
     <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
@@ -85,17 +75,17 @@ const TopFabricCategories = () => {
             Featured <span className="text-red-600">Fabrics</span>
           </h2>
           <p className="mt-4 mx-auto max-w-2xl text-gray-600">
-            Explore our selection of premium quality fabrics designed for durability, 
-            comfort, and performance across various applications.
+            Explore our selection of premium quality fabrics designed for
+            durability, comfort, and performance across various applications.
           </p>
         </div>
 
-        {/* Products grid - 3 columns x 2 rows */}
+        {/* Categories grid - 3 columns x 2 rows */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-          {featuredProducts.map((product) => (
+          {featuredCategories.map((category) => (
             <Link
-              href={`/products/${product.slug}`}
-              key={product.id}
+              href={`/products/${category.slug}`}
+              key={category.id}
               className="relative group overflow-hidden rounded-xl bg-white border border-gray-100 hover:shadow-2xl transition-all duration-300 h-64 sm:h-72 md:h-80 flex flex-col"
             >
               <div className="relative w-full h-full">
@@ -108,21 +98,21 @@ const TopFabricCategories = () => {
                 {/* Image */}
                 <div className="relative w-full h-full">
                   <Image
-                    src={product.images[0]}
-                    alt={product.name}
+                    src={category.image}
+                    alt={category.name}
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   />
                 </div>
 
-                {/* Product name and category */}
+                {/* Category name and product count */}
                 <div className="absolute bottom-0 left-0 w-full p-5 z-20 transform translate-y-0 group-hover:translate-y-[-5px] transition-transform duration-300">
                   <span className="text-red-300 text-sm font-medium mb-1 block">
-                    {product.category}
+                    {category.products.length} Products
                   </span>
                   <h3 className="text-white text-xl md:text-2xl font-bold tracking-wide">
-                    {product.name}
+                    {category.name}
                   </h3>
                   <div className="flex items-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white text-sm">View Details</span>
@@ -165,7 +155,7 @@ const TopFabricCategories = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
           </Link>

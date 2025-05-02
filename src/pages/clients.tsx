@@ -7,17 +7,26 @@ const ClientsHero = dynamic(() => import("@/components/clients/ClientsHero"), {
   ssr: false,
 });
 
-const ClientsRegions = dynamic(() => import("@/components/clients/ClientsRegions"), {
-  ssr: false,
-});
+const ClientsRegions = dynamic(
+  () => import("@/components/clients/ClientsRegions"),
+  {
+    ssr: false,
+  }
+);
 
-const ClientsLogos = dynamic(() => import("@/components/clients/ClientsLogos"), {
-  ssr: false,
-});
+const ClientsLogos = dynamic(
+  () => import("@/components/clients/ClientsLogos"),
+  {
+    ssr: false,
+  }
+);
 
-const ClientsTestimonials = dynamic(() => import("@/components/clients/ClientsTestimonials"), {
-  ssr: false,
-});
+const ClientsTestimonials = dynamic(
+  () => import("@/components/clients/ClientsTestimonials"),
+  {
+    ssr: false,
+  }
+);
 
 export default function ClientsPage() {
   return (

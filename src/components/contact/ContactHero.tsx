@@ -34,7 +34,7 @@ const ContactHero: React.FC = () => {
             fill="none"
           />
         </svg>
-        
+
         <svg
           className="absolute bottom-0 left-1/3 h-48 w-48 text-red-700 rotate-45"
           viewBox="0 0 100 100"
@@ -55,7 +55,8 @@ const ContactHero: React.FC = () => {
             Get In <span className="text-red-600">Touch</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8">
-            We're here to answer your questions about our products, services, and sustainable fabric solutions.
+            We're here to answer your questions about our products, services,
+            and sustainable fabric solutions.
           </p>
         </div>
       </div>

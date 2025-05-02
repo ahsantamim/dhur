@@ -19,15 +19,15 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       {isClient ? (
         <>
           <Navbar />
-          <div className="min-h-screen pt-16">
-            {children}
-          </div>
+          <div className="min-h-screen pt-16">{children}</div>
           <Footer />
         </>
       ) : (
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <div className="mb-4 text-xl font-semibold text-red-600">Loading...</div>
+            <div className="mb-4 text-xl font-semibold text-red-600">
+              Loading...
+            </div>
             <div className="w-16 h-1 bg-red-600 mx-auto"></div>
           </div>
         </div>

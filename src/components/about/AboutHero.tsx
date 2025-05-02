@@ -51,7 +51,7 @@ export default function AboutHero() {
                 backgroundImage: `url(${img})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                height: "120%", /* Extra height for parallax movement */
+                height: "120%" /* Extra height for parallax movement */,
                 width: "100%",
               }}
             />
@@ -139,9 +139,7 @@ export default function AboutHero() {
       </div>
 
       {/* Section that follows the hero */}
-      <div className="relative bg-white z-10">
-        {/* Content starts here */}
-      </div>
+      <div className="relative bg-white z-10">{/* Content starts here */}</div>
     </section>
   );
 }
