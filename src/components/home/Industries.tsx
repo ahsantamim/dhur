@@ -1,18 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  SiNike,
-  SiBmw,
-  SiBosch,
-  SiSeat,
-  SiHonda,
-  SiTarget,
-  SiZara,
-  SiUniqlo,
-  SiPhilipshue,
-  SiAbbott,
-  SiPuma,
-} from "react-icons/si";
-import { IconType } from "react-icons";
+import Image from "next/image";
 
 interface TranslateWrapperProps {
   children: React.ReactNode;
@@ -20,7 +7,7 @@ interface TranslateWrapperProps {
 }
 
 interface LogoItemProps {
-  Icon: IconType;
+  imagePath: string;
   label: string;
 }
 
@@ -115,24 +102,13 @@ const Industries = () => {
       <div className="relative border-t border-b border-neutral-100 py-10 bg-white/50">
         <div className="max-w-7xl mx-auto flex overflow-hidden">
           <TranslateWrapper>
-            <LogoRow1 />
+            <LogoRow />
           </TranslateWrapper>
           <TranslateWrapper>
-            <LogoRow1 />
+            <LogoRow />
           </TranslateWrapper>
           <TranslateWrapper>
-            <LogoRow1 />
-          </TranslateWrapper>
-        </div>
-        <div className="max-w-7xl mx-auto flex overflow-hidden mt-8">
-          <TranslateWrapper reverse>
-            <LogoRow2 />
-          </TranslateWrapper>
-          <TranslateWrapper reverse>
-            <LogoRow2 />
-          </TranslateWrapper>
-          <TranslateWrapper reverse>
-            <LogoRow2 />
+            <LogoRow />
           </TranslateWrapper>
         </div>
       </div>
@@ -159,7 +135,7 @@ const TranslateWrapper = ({ children, reverse }: TranslateWrapperProps) => {
     <motion.div
       initial={{ translateX: reverse ? "-100%" : "0%" }}
       animate={{ translateX: reverse ? "0%" : "-100%" }}
-      transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+      transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
       className="flex gap-8 px-4"
     >
       {children}
@@ -167,11 +143,19 @@ const TranslateWrapper = ({ children, reverse }: TranslateWrapperProps) => {
   );
 };
 
-const LogoItem = ({ Icon, label }: LogoItemProps) => {
+const LogoItem = ({ imagePath, label }: LogoItemProps) => {
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 flex justify-center items-center bg-white hover:bg-red-50 text-neutral-800 transition-colors rounded-lg shadow-sm border border-neutral-100 group">
-        <Icon className="text-3xl sm:text-5xl md:text-6xl transition-all hover:scale-110 hover:text-red-600" />
+      <div className="w-36 h-24 sm:w-40 sm:h-28 md:w-48 md:h-32 flex justify-center items-center bg-white hover:bg-red-50 transition-colors rounded-lg shadow-sm border border-neutral-100 group p-4 overflow-hidden">
+        <div className="relative w-full h-full">
+          <Image
+            src={imagePath}
+            alt={label}
+            fill
+            sizes="(max-width: 640px) 36px, (max-width: 768px) 40px, 48px"
+            className="object-contain transition-all hover:scale-110"
+          />
+        </div>
       </div>
       <span className="text-xs sm:text-sm text-neutral-600 font-medium whitespace-nowrap">
         {label}
@@ -180,25 +164,50 @@ const LogoItem = ({ Icon, label }: LogoItemProps) => {
   );
 };
 
-const LogoRow1 = () => (
+const LogoRow = () => (
   <>
-    <LogoItem Icon={SiZara} label="Fashion" />
-    <LogoItem Icon={SiNike} label="Sportswear" />
-    <LogoItem Icon={SiTarget} label="Textile" />
-    <LogoItem Icon={SiPhilipshue} label="Home" />
-    <LogoItem Icon={SiUniqlo} label="Retail" />
-    <LogoItem Icon={SiPuma} label="Apparel" />
-  </>
-);
-
-const LogoRow2 = () => (
-  <>
-    <LogoItem Icon={SiBmw} label="Automotive" />
-    <LogoItem Icon={SiAbbott} label="Medical" />
-    <LogoItem Icon={SiSeat} label="Industrial" />
-    <LogoItem Icon={SiHonda} label="Manufacturing" />
-    <LogoItem Icon={SiBosch} label="Distribution" />
-    <LogoItem Icon={SiPhilipshue} label="Technology" />
+    <LogoItem
+      imagePath="/images/buyer company logo/pepe-jeans-others-et.webp"
+      label="Pepe Jeans"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/Target_Australia-Logo.wine.png"
+      label="Target"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/Reitmans-Logo.wine.png"
+      label="Reitmans"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/Promod-logo-500x281.jpg"
+      label="Promod"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/bestseller-logo-white-on-black.jpg"
+      label="Bestseller"
+    />
+    <LogoItem imagePath="/images/buyer company logo/ca-logo.png" label="C&A" />
+    <LogoItem
+      imagePath="/images/buyer company logo/Woolo.webp"
+      label="Woolworths"
+    />
+    <LogoItem imagePath="/images/buyer company logo/image-70.png" label="H&M" />
+    <LogoItem
+      imagePath="/images/buyer company logo/2021-swedish-fashion-brand-kappahl-new-logo-design.png"
+      label="KappAhl"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/357484014_649800033834950_819934350580520110_n.jpg"
+      label="Calzedonia"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/431510957_803859341769307_225701672570979654_n.jpg"
+      label="Tesco"
+    />
+    <LogoItem
+      imagePath="/images/buyer company logo/id6eWC5QcD_1742537920844.jpeg"
+      label="LPP"
+    />
   </>
 );
 

@@ -28,12 +28,20 @@ const ClientsTestimonials = dynamic(
   }
 );
 
+const LocalBuyingHouses = dynamic(
+  () => import("@/components/clients/LocalBuyingHousesAlt"),
+  {
+    ssr: false,
+  }
+);
+
 export default function ClientsPage() {
   return (
     <MainLayout>
       <ClientsHero />
       <ClientsRegions />
       <ClientsLogos />
+      <LocalBuyingHouses />
       <ClientsTestimonials />
     </MainLayout>
   );
