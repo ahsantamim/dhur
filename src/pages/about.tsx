@@ -15,9 +15,9 @@ const AboutJourney = dynamic(() => import("@/components/about/AboutJourney"), {
   ssr: false,
 });
 
-const AboutTeam = dynamic(() => import("@/components/about/AboutTeam"), {
-  ssr: false,
-});
+// const AboutTeam = dynamic(() => import("@/components/about/AboutTeam"), {
+//   ssr: false,
+// });
 
 export default function AboutPage() {
   return (
@@ -25,7 +25,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutMission />
       <AboutJourney />
-      <AboutTeam />
+      {/* <AboutTeam /> */}
     </MainLayout>
   );
 }

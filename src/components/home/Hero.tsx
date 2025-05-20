@@ -104,15 +104,14 @@ export default function Hero() {
         {/* Hero Content - kept red elements */}
         <div className="absolute max-w-7xl mx-auto inset-0 flex items-center px-4 sm:px-6">
           <div className="max-w-3xl text-left text-white">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-6">
-              Empowering Industry
-              <span className="block text-red-500 mt-2">
-                Through Innovation
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-6">
+              Welcome to JSTEX
+              <span className="block text-3xl text-gray-200 mt-2">
+                China Jiangsu Textiles I/E Group Datai Corporation
               </span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100 max-w-2xl">
-              High-performance tools & machinery designed for modern businesses
-              seeking excellence and efficiency.
+              Your Trusted Global Partner in Quality Textiles Since 1973
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

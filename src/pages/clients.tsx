@@ -1,47 +1,18 @@
 import React from "react";
 import MainLayout from "@/layouts/MainLayout";
-import dynamic from "next/dynamic";
-
-// Import all components with client-side rendering only
-const ClientsHero = dynamic(() => import("@/components/clients/ClientsHero"), {
-  ssr: false,
-});
-
-const ClientsRegions = dynamic(
-  () => import("@/components/clients/ClientsRegions"),
-  {
-    ssr: false,
-  }
-);
-
-const ClientsLogos = dynamic(
-  () => import("@/components/clients/ClientsLogos"),
-  {
-    ssr: false,
-  }
-);
-
-const ClientsTestimonials = dynamic(
-  () => import("@/components/clients/ClientsTestimonials"),
-  {
-    ssr: false,
-  }
-);
-
-const LocalBuyingHouses = dynamic(
-  () => import("@/components/clients/LocalBuyingHousesAlt"),
-  {
-    ssr: false,
-  }
-);
+import ClientsHero from "@/components/clients/ClientsHero";
+import ClientsRegions from "@/components/clients/ClientsRegions";
+import ClientsLogos from "@/components/clients/ClientsLogos";
+import ClientsTestimonials from "@/components/clients/ClientsTestimonials";
+// import LocalBuyingHouses from "@/components/clients/LocalBuyingHouses";
 
 export default function ClientsPage() {
   return (
     <MainLayout>
       <ClientsHero />
+      {/* <LocalBuyingHouses /> */}
       <ClientsRegions />
       <ClientsLogos />
-      <LocalBuyingHouses />
       <ClientsTestimonials />
     </MainLayout>
   );
