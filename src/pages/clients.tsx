@@ -4,13 +4,13 @@ import ClientsHero from "@/components/clients/ClientsHero";
 import ClientsRegions from "@/components/clients/ClientsRegions";
 import ClientsLogos from "@/components/clients/ClientsLogos";
 import ClientsTestimonials from "@/components/clients/ClientsTestimonials";
-// import LocalBuyingHouses from "@/components/clients/LocalBuyingHouses";
+import ClientsLocal from "@/components/clients/ClientsLocal";
 
 export default function ClientsPage() {
   return (
     <MainLayout>
       <ClientsHero />
-      {/* <LocalBuyingHouses /> */}
+      <ClientsLocal />
       <ClientsRegions />
       <ClientsLogos />
       <ClientsTestimonials />

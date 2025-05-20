@@ -83,7 +83,7 @@ const About: React.FC = () => {
             <div className="relative overflow-hidden rounded-lg shadow-xl">
               <div className="aspect-[4/3] w-full">
                 <Image
-                  src="/images/home/about-image.PNG"
+                  src="/images/home/about-image.png"
                   alt="Our innovative textile manufacturing facility"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"

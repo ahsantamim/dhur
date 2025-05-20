@@ -99,17 +99,19 @@ const Industries = () => {
         </div>
       </div>
 
-      <div className="relative border-t border-b border-neutral-100 py-10 bg-white/50">
-        <div className="max-w-7xl mx-auto flex overflow-hidden">
-          <TranslateWrapper>
-            <LogoRow />
-          </TranslateWrapper>
-          <TranslateWrapper>
-            <LogoRow />
-          </TranslateWrapper>
-          <TranslateWrapper>
-            <LogoRow />
-          </TranslateWrapper>
+      <div className="relative border-t border-b border-neutral-200 py-16 bg-white">
+        <div className="max-w-7xl mx-auto overflow-hidden">
+          <div className="flex">
+            <TranslateWrapper>
+              <LogoRow />
+            </TranslateWrapper>
+            <TranslateWrapper>
+              <LogoRow />
+            </TranslateWrapper>
+            <TranslateWrapper>
+              <LogoRow />
+            </TranslateWrapper>
+          </div>
         </div>
       </div>
 
@@ -135,8 +137,8 @@ const TranslateWrapper = ({ children, reverse }: TranslateWrapperProps) => {
     <motion.div
       initial={{ translateX: reverse ? "-100%" : "0%" }}
       animate={{ translateX: reverse ? "0%" : "-100%" }}
-      transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-      className="flex gap-8 px-4"
+      transition={{ duration: 200, repeat: Infinity, ease: "linear" }}
+      className="flex gap-14 px-7"
     >
       {children}
     </motion.div>
@@ -146,18 +148,24 @@ const TranslateWrapper = ({ children, reverse }: TranslateWrapperProps) => {
 const LogoItem = ({ imagePath, label }: LogoItemProps) => {
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className="w-36 h-24 sm:w-40 sm:h-28 md:w-48 md:h-32 flex justify-center items-center bg-white hover:bg-red-50 transition-colors rounded-lg shadow-sm border border-neutral-100 group p-4 overflow-hidden">
-        <div className="relative w-full h-full">
+      <div className="w-40 h-28 sm:w-44 sm:h-32 md:w-52 md:h-36 flex justify-center items-center bg-white transition-all rounded-lg  group p-2 overflow-hidden">
+        <div className="relative w-[90%] h-[90%]">
           <Image
             src={imagePath}
             alt={label}
             fill
-            sizes="(max-width: 640px) 36px, (max-width: 768px) 40px, 48px"
-            className="object-contain transition-all hover:scale-110"
+            sizes="(max-width: 640px) 144px, (max-width: 768px) 160px, 192px"
+            quality={100}
+            priority={true}
+            className="object-contain transition-all hover:scale-105"
+            style={{
+              objectFit: "contain",
+            }}
+            unoptimized={true}
           />
         </div>
       </div>
-      <span className="text-xs sm:text-sm text-neutral-600 font-medium whitespace-nowrap">
+      <span className="text-sm sm:text-base text-neutral-700 font-medium whitespace-nowrap">
         {label}
       </span>
     </div>
