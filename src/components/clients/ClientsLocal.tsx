@@ -52,21 +52,22 @@ const ClientsLocal = () => {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+          <span className="mb-2 inline-block rounded-full bg-black px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
             Our Local Partners
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold leading-[1.2] mb-4">
+            We're proud to collaborate with Bangladesh's{" "}
+            <span className="text-red-600">
+              leading buying houses and manufacturing facilities
+            </span>
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We're proud to collaborate with Bangladesh's leading buying houses
-            and manufacturing facilities
-          </p>
         </div>
 
         {/* Buying Houses Section */}
         <div className="mb-20">
           <div className="flex items-center justify-center mb-10">
             <div className="h-px bg-gray-300 flex-grow"></div>
-            <h3 className="text-2xl font-bold text-blue-700 px-6">
+            <h3 className="text-2xl font-bold text-red-600 px-6">
               Buying Houses
             </h3>
             <div className="h-px bg-gray-300 flex-grow"></div>
@@ -94,9 +95,7 @@ const ClientsLocal = () => {
         <div>
           <div className="flex items-center justify-center mb-10">
             <div className="h-px bg-gray-300 flex-grow"></div>
-            <h3 className="text-2xl font-bold text-blue-700 px-6">
-              Manufacturing Facilities
-            </h3>
+            <h3 className="text-2xl font-bold text-red-600 px-6">Factories</h3>
             <div className="h-px bg-gray-300 flex-grow"></div>
           </div>
 
