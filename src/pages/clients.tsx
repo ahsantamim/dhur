@@ -10,9 +10,10 @@ export default function ClientsPage() {
   return (
     <MainLayout>
       <ClientsHero />
-      <ClientsLocal />
       <ClientsRegions />
       <ClientsLogos />
+      <ClientsLocal />
+
       <ClientsTestimonials />
     </MainLayout>
   );
