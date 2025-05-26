@@ -1,52 +1,64 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  SiZara,
-  SiNike,
-  SiTarget,
-  SiUniqlo,
-  SiPuma,
-  SiAdidas,
-  SiFila,
-} from "react-icons/si";
 
 // Custom logo component
 const Logo: React.FC<{
-  icon: React.ReactNode;
-  name: string;
+  imagePath: string;
   delay: number;
-}> = ({ icon, name, delay }) => {
+}> = ({ imagePath, delay }) => {
   return (
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
-      className="flex flex-col items-center justify-center"
+      className="flex items-center justify-center"
     >
-      <div className="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-red-100 transition-all duration-300 p-6">
-        <div className="text-5xl sm:text-6xl text-gray-800 hover:text-red-600 transition-colors duration-300">
-          {icon}
+      <div className="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center bg-white rounded-full hover:shadow-md hover:border-red-100 transition-all duration-300 p-4">
+        <div className="relative w-full h-full">
+          <Image
+            src={`/images/client logo/${imagePath}`}
+            alt="Client Logo"
+            fill
+            className="object-contain p-2"
+          />
         </div>
       </div>
-      <span className="mt-3 text-sm text-gray-600">{name}</span>
     </motion.div>
   );
 };
 
 const ClientsLogos: React.FC = () => {
   const logos = [
-    { icon: <SiZara />, name: "Zara" },
-    { icon: <SiNike />, name: "Nike" },
-    { icon: <SiAdidas />, name: "Adidas" },
-
-    { icon: <SiUniqlo />, name: "Uniqlo" },
-    { icon: <SiTarget />, name: "Target" },
-
-    { icon: <SiPuma />, name: "Puma" },
-
-    { icon: <SiFila />, name: "FILA" },
+    "file_00000000025061fdbe0e3a90eca75757.png",
+    "file_0000000007146230a17e70373cf9a418.png",
+    "file_000000000b94622fbaa87b567c40639a.png",
+    "file_00000000109461f5a825d68af161ac43.png",
+    "file_00000000127861f586fd25846814d299.png",
+    "file_000000001298622f9ca9558f5dc3ffa6.png",
+    "file_000000001c2c61f892d911a90e465001.png",
+    "file_00000000313461fdb3aa496abc25a05f.png",
+    "file_0000000034b461f89c133fc9b6c33b7a.png",
+    "file_00000000528461f9b1be0804d38d459c.png",
+    "file_000000005820622f9efec1eb971d5e25.png",
+    "file_0000000058a861fd84155eff7de5da81.png",
+    "file_00000000686c61f897555a1029b777a7.png",
+    "file_000000006c1462308437d6395f9f6131.png",
+    "file_000000006fe06230ae04dcfeb4cd6612.png",
+    "file_000000007eec61f89e6fedbd4a9cc5fe.png",
+    "file_000000009b7461f6ac59215eb03bf362.png",
+    "file_000000009bac622f84cfce2202adad18.png",
+    "file_00000000b39c61f788bef4706afb2a88.png",
+    "file_00000000b4b86230af1d1db5618c0a54.png",
+    "file_00000000c97c61f8897c2a9653b05210.png",
+    "file_00000000cb34622fa8403d39da42ec53.png",
+    "file_00000000d0b461f7a497dc36ee485bba.png",
+    "file_00000000e570623092d4561d744c63ff.png",
+    "file_00000000f77461f8b48368d46bf35ef9.png",
+    "upscaled_logo_1.png",
+    "upscaled_logo_2.png",
+    "upscaled_logo_3.png",
   ];
 
   return (
@@ -66,9 +78,9 @@ const ClientsLogos: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           {logos.map((logo, index) => (
-            <Logo key={index} icon={logo.icon} name={logo.name} delay={index} />
+            <Logo key={index} imagePath={logo} delay={index} />
           ))}
         </div>
 
