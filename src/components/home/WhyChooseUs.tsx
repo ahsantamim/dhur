@@ -197,10 +197,10 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        <div className="mt-12 sm:mt-16 text-center">
+        <div className="mt-12 sm:mt-16 text-center rounded-md">
           <Link
             href="/about"
-            className="group inline-flex items-center bg-red-600 px-6 py-3 text-sm font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
+            className="group inline-flex items-center rounded-md bg-red-600 px-6 py-3 text-sm font-medium uppercase tracking-wider text-white transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
           >
             Learn More About Us
             <FiArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

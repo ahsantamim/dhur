@@ -123,7 +123,7 @@ const Industries = () => {
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 font-medium transition-colors"
+          className="inline-flex items-center justify-center rounded-md bg-red-600 hover:bg-red-700 text-white px-6 py-3 font-medium transition-colors"
         >
           Explore Case Studies
         </motion.button>

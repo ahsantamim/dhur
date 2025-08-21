@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // Using local image paths with better browser compatibility
 const images = [
-  "images/home/hero-1.png",
+  "images/home/hero-1.jpeg",
   "images/home/hero-2.png",
   "images/home/hero-3.png",
 ];
